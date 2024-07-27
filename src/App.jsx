@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
-  const [todo, settodo] = useState(""); 
+  const [todo, settodo] = useState("");
   const [todos, settodos] = useState([]);
   const [showFinished, setshowFinished] = useState(true);
 
@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
- 
+
   const handleEdit = (id, todo) => {
     settodo(todo);
     const newTodos = todos.filter(item => item.id !== id);
@@ -88,7 +88,7 @@ function App() {
         </button>
       </div>
       <div className="todos flex justify-center mt-[50px] ">
-        <div className="box sm:w-[60vw] w-[80vw] rounded-3xl  h-[50vh] bg-[#1B2F1A] bg-opacity-70 text-white overflow-y-auto">
+        <div className="box sm:w-[60vw] w-[80vw] rounded-3xl sm:h-[50vh]  h-[45vh] bg-[#1B2F1A] bg-opacity-70 text-white overflow-y-auto">
           <div className="heading flex justify-center mt-4 font-normal text-[30px] mb-7">Your Tasks</div>
           {todos.length === 0 ? (
             <div className='font-normal opacity-70 text-[20px] flex justify-center items-center h-[20vh]'>No tasks to display</div>
