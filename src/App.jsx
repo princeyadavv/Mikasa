@@ -48,7 +48,7 @@ function App() {
       const month = date.getMonth() + 1; 
       const year = date.getFullYear();
       const newTodo = { id: uuidv4(), todo, isCompleted: false, day, month, year };
-      settodos(prevTodos => [...prevTodos, newTodo]);
+      settodos([...todos, newTodo]);
       settodo("");
     }
     console.log(todos)
@@ -65,16 +65,16 @@ function App() {
   };
 
   return (
-    <div className='w-full h-screen bg-gradient-to-t from-[#0CA809] to-[#116B0F] pb-4'>
+    <div className='w-full h-full  pb-[50px]'>
       <div className="header py-[50px]">
         <div className="name font-header text-[#DA1E1E] text-[52px] flex justify-center text-shadow-custom-red">Mikasa</div>
         <div className="desc font-normal text-[30px] text-white flex justify-center">Your daily task reminder</div>
       </div>
-      <div className="input flex justify-center gap-10 items-center">
+      <div className="input flex sm:flex-row flex-col justify-center gap-5 sm:gap-10 items-center">
         <input 
           onChange={handleChange} 
           type="text" 
-          className='w-[500px] h-[50px] placeholder:text-[18px] shadow-custom-dark rounded-full outline-none pl-5' 
+          className='w-[500px] h-[50px]  placeholder:text-[18px] shadow-custom-dark rounded-full outline-none pl-5' 
           placeholder='Type to add a task' 
           onKeyDown={handleKeyDown} 
           value={todo} 
@@ -87,8 +87,8 @@ function App() {
           Save
         </button>
       </div>
-      <div className="todos flex justify-center mt-[50px]">
-        <div className="box w-[60vw] rounded-3xl h-[50vh] bg-[#1B2F1A] bg-opacity-70 text-white overflow-y-auto">
+      <div className="todos flex justify-center mt-[50px] ">
+        <div className="box sm:w-[60vw] w-[80vw] rounded-3xl  h-[50vh] bg-[#1B2F1A] bg-opacity-70 text-white overflow-y-auto">
           <div className="heading flex justify-center mt-4 font-normal text-[30px] mb-7">Your Tasks</div>
           {todos.length === 0 ? (
             <div className='font-normal opacity-70 text-[20px] flex justify-center items-center h-[20vh]'>No tasks to display</div>
