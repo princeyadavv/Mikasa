@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const todoString = localStorage.getItem("todos");
-    if (todoString) {
+    if (todoString) { 
       const todos = JSON.parse(todoString);
       settodos(todos);
     }
