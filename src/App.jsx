@@ -45,7 +45,7 @@ function App() {
     if (todo.length > 3) {
       const date = new Date();
       const day = date.getDate();
-      const month = date.getMonth() + 1; // Month is 0-based, so add 1
+      const month = date.getMonth() + 1; 
       const year = date.getFullYear();
       const newTodo = { id: uuidv4(), todo, isCompleted: false, day, month, year };
       settodos(prevTodos => [...prevTodos, newTodo]);
@@ -65,7 +65,7 @@ function App() {
   };
 
   return (
-    <div className='w-full h-full bg-gradient-to-t from-[#0CA809] to-[#116B0F] pb-4'>
+    <div className='w-full h-screen bg-gradient-to-t from-[#0CA809] to-[#116B0F] pb-4'>
       <div className="header py-[50px]">
         <div className="name font-header text-[#DA1E1E] text-[52px] flex justify-center text-shadow-custom-red">Mikasa</div>
         <div className="desc font-normal text-[30px] text-white flex justify-center">Your daily task reminder</div>
