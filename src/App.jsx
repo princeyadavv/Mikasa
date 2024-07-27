@@ -74,7 +74,7 @@ function App() {
         <input 
           onChange={handleChange} 
           type="text" 
-          className='w-[500px] h-[50px]  placeholder:text-[18px] shadow-custom-dark rounded-full outline-none pl-5' 
+          className='w-[300px] h-[50px]  placeholder:text-[18px] shadow-custom-dark rounded-full outline-none pl-5' 
           placeholder='Type to add a task' 
           onKeyDown={handleKeyDown} 
           value={todo} 
