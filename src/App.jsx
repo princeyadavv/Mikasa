@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
+ 
   const handleEdit = (id, todo) => {
     settodo(todo);
     const newTodos = todos.filter(item => item.id !== id);
